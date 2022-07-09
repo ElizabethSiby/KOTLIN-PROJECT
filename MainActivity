@@ -1,0 +1,21 @@
+package com.example.counterapp
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val plusbtn= findViewById<Button>(R.id.button)as Button
+        val minusbtn= findViewById<Button>(R.id.button2)as Button
+        val countText= findViewById<TextView>(R.id.textView) as TextView
+        var count:Int =0
+        plusbtn.setOnClickListener{count++
+        countText.text=count.toString()}
+        minusbtn.setOnClickListener{count--
+            countText.text=count.toString()}
+    }
+}
